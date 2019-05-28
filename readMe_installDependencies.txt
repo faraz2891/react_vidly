@@ -6,3 +6,6 @@ Dependencies used in vidly project and how to install them.........
 Note: Lodash is optimise version of javascript popular library 'underscore'
 
 * For Bootstrap and font awesome to install - npm i bootstrap@4.1.1 font-awesome@4.7.0 
+
+*For Form Validation in this we use Joi, its vry powerful npm library for validation and to install it-
+npm i joi-browser@13.4
