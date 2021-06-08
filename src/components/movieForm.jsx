@@ -4,7 +4,7 @@ import Form from "./common/form";
 import { getMovie, saveMovie } from "../services/movieService";
 import { getGenres } from "../services/genreService";
 
-class movieForm extends Form {
+class MovieForm extends Form {
   state = {
     data: {
       title: "",
@@ -91,4 +91,4 @@ class movieForm extends Form {
   }
 }
 
-export default movieForm;
+export default MovieForm;

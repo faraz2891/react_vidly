@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import ListGroup from "./common/listGroup";
 import MoviesTable from "./moviesTable";
-import MovieForm from "./movieForm";
 import Pagination from "./common/pagination";
 import { getMovies, deleteMovie } from "../services/movieService";
 import { getGenres } from "../services/genreService";
@@ -107,6 +106,7 @@ class Movies extends Component {
   render() {
     const { length: count } = this.state.movies;
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
+    const { user } = this.props;
 
     if (count === 0) return <p>There are no movies in the database</p>;
 
@@ -122,14 +122,15 @@ class Movies extends Component {
           />
         </div>
         <div className="col-10">
-          <Link
-            to="/movies/new"
-            className="btn btn-primary"
-            style={{ margin: 10 }}
-            component={MovieForm}
-          >
-            New Movie
-          </Link>
+          {user && (
+            <Link
+              to="/movies/new"
+              className="btn btn-primary"
+              style={{ margin: 10 }}
+            >
+              New Movie
+            </Link>
+          )}
           <p>Showing {totalCount} movies in the database</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
           <MoviesTable

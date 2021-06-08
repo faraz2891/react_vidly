@@ -9,3 +9,7 @@ Note: Lodash is optimise version of javascript popular library 'underscore'
 
 *For Form Validation in this we use Joi, its vry powerful npm library for validation and to install it-
 npm i joi-browser@13.4
+
+
+*jwt decode- its use to decode json web token and fetch it information via payload.
+npm i jwt-decode@2.2.0
